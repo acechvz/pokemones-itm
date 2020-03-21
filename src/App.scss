@@ -1,0 +1,98 @@
+@import 'color-types';
+@import 'icon-colors.scss';
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+}
+
+h1, h2, h3, h4 {
+    margin: 0;
+}
+
+.pokedex {
+    background-color: #f3f3f3;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+    &-content {
+        width: 350px;
+        max-width: 100%;
+    }
+}
+
+// Color types
+
+.card {
+    text-align: center;
+    box-shadow: 0 0 10px rgba(black, .3);
+    border-radius: 15px;
+    &-info {
+        padding: 15px;
+        border-radius: 15px;
+        padding-bottom: 0;
+        overflow: hidden;
+        color: white;
+        position: relative;
+        h2 {
+            font-weight: bold;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        &-id {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-weight: 500;
+            font-size: 1.2em;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            padding-top: 15px;
+        }
+
+        .pokeball-bg {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background-image: url('./pokeball.png');
+            background-size: contain;
+            z-index: 2;
+            bottom: -30px;
+            right: -30px;
+            opacity: .45;
+        }
+    }
+
+    &-details {
+        background-color: #fff;
+        color: #000;
+        padding: 60px 40px 20px 40px;
+        margin-top: -30px;
+        border-radius: 15px;
+        display: flex;
+        flex-flow: row wrap;
+        .details-item {
+            flex: 1;
+            font-weight: 300;
+            letter-spacing: .11em;
+            div {
+                font-size: .85em;
+                margin-bottom: 10px;
+            }
+            span {
+                font-size: 1.5em;
+            }
+        }
+    }
+}
