@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.scss";
 import { API_URL } from './constants';
 import PokemonCard from './components/PokemonCard';
+import SearchBox from './components/SearchBox';
 
 // Pokedex
 function App() {
@@ -17,16 +18,14 @@ function App() {
 
   useEffect(() => {
     // componentDidMount 
-    getPokemon(35);
+    getPokemon('pikachu');
   }, [])
 
   return (
     <div className="pokedex">
       <div className="pokedex-content">
-        {/* Search Box */}
-        
+        <SearchBox doSubmit={ getPokemon } />
 
-        {/* Pokemon Card */}
         {
           Object.keys(pokemon).length &&
           <PokemonCard pokemon={ pokemon } />
